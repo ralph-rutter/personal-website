@@ -13,21 +13,16 @@
 </head>
 <body>
 <div id="top-bar">
-<!--    <img src="images/mathematics-989124_1920.jpg" alt="mathematical diagram montage">-->
 </div>
 <header>
     <a class="nav-button previous" href="about.html">
-        <img src="images/about-icon.png" alt="about icon">
+        <img src="images/portfolio-icon.png" alt="about icon">
     </a>
-    <div id="main-heading">
-        <h1>Ralph Rutter</h1>
-    </div>
     <a class="nav-button next" href="portfolio.html">
-        <img src="images/portfolio-icon.png" alt="portfolio icon">
+        <img src="images/about-icon.png" alt="portfolio icon">
     </a>
 </header>
 <main>
-    <h2 class="subheading">Junior Full-Stack Developer</h2>
 </main>
 <nav>
     <a class="big-button" href="contact.html">Get In Touch</a>
@@ -41,7 +36,7 @@
                 About Me
             </div>
         </a>
-        <a class="button current" href="index.html">
+        <a class="button" href="index.html">
             <div class="icon-container">
                 <div class="icon">
                 </div>
@@ -57,6 +52,15 @@
             </div>
             <div>
                 Portfolio
+            </div>
+        </a>
+        <a class="button current" href="blog.php">
+            <div class="icon-container">
+                <div class="icon">
+                </div>
+            </div>
+            <div>
+                Blog
             </div>
         </a>
     </div>
