@@ -1,7 +1,7 @@
 header #main-heading {
 	display: inline-block;
 	position: relative;
-	z-index: 1;
+	z-index: 20;
 }
 
 header #main-heading h1 {
@@ -49,7 +49,7 @@ header img.centre {
 	background-color: #d8b4e2;
 	margin-top: -15.7%;
 	margin-left: -6%;
-	z-index: 1;
+	z-index: 20;
 	
 }
 
@@ -61,7 +61,7 @@ header .container.margin {
 	font-size: 0;
 	margin-left: -40%;
 	margin-top: -33px;
-	z-index: 1;
+	z-index: 20;
 }
 
 header .col4 h1 {
@@ -89,7 +89,7 @@ header .nav-button {
 	height: 50px;
 	width: 50px;
 	margin-top: -25px;
-	z-index: 1;
+	z-index: 20;
 }
 
 header .nav-button img {

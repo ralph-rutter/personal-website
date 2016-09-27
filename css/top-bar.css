@@ -2,6 +2,8 @@
 	position: relative;
 	font-size: 0;
 	background-color: #bc96e6;
+    overflow: visible;
+    z-index: 20;
 }
 #top-bar img {
 	width: 100%;
@@ -52,4 +54,11 @@
 	font-weight: 600;
 	height: 80px;
 	margin-top: -40px;
+}
+
+#top-bar .content-container {
+    background: white;
+    margin: auto;
+    width: 80%;
+    height: 130%;
 }

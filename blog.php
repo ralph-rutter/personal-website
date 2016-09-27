@@ -13,6 +13,7 @@
 </head>
 <body>
 <div id="top-bar">
+    <div class="content-container"></div>
 </div>
 <header>
     <a class="nav-button previous" href="portfolio.html">
