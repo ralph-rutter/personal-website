@@ -57,8 +57,11 @@
 }
 
 #top-bar .content-container {
-    background: white;
+    background: #ffffff;
+    -moz-border-radius: 0 0 18px 18px;
+    -webkit-border-radius: 0 0 18px 18px;
+    border-radius: 0 0 18px 18px;
     margin: auto;
     width: 80%;
-    height: 130%;
+    height: 175%;
 }
