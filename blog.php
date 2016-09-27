@@ -15,11 +15,11 @@
 <div id="top-bar">
 </div>
 <header>
-    <a class="nav-button previous" href="about.html">
-        <img src="images/portfolio-icon.png" alt="about icon">
+    <a class="nav-button previous" href="portfolio.html">
+        <img src="images/portfolio-icon.png" alt="portfolio icon">
     </a>
-    <a class="nav-button next" href="portfolio.html">
-        <img src="images/about-icon.png" alt="portfolio icon">
+    <a class="nav-button next" href="about.html">
+        <img src="images/about-icon.png" alt="about icon">
     </a>
 </header>
 <main>
