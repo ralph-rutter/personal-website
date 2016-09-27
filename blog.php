@@ -13,7 +13,19 @@
 </head>
 <body>
 <div id="top-bar">
-    <div class="content-container"></div>
+    <div class="content-container">
+        <div class="header-container">
+            <div class="header">
+                <div class="title">
+                    <h2>Blog:</h2>
+                </div>
+                <div class="subtitle">
+                <h1>Recent Posts</h1>
+                </div>
+            </div>
+            <a href="blog.php/?page=archive" class="tab-button">Archive</a>
+        </div>
+    </div>
 </div>
 <header>
     <a class="nav-button previous" href="portfolio.html">

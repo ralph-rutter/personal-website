@@ -71,7 +71,7 @@
     background: #55286f;
     margin: auto;
     width: 75%;
-    height: 100px;
+    height: 75%;
     -moz-border-radius: 0 0 18px 18px;
     -webkit-border-radius: 0 0 18px 18px;
     border-radius: 0 0 18px 18px;
@@ -86,7 +86,7 @@
     height: 100%;
 }
 
-#top-bar .header h1 {
+#top-bar .header h2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -104,18 +104,34 @@
     height: 100%;
 }
 
-#top-bar .header h2 {
+#top-bar .header h1 {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -25px;
-    margin-left: -64px;
+    margin-left: -118px;
     font-size: 38px;
     background: #55286f;
 }
-#top-bar .header h3 {
+
+#top-bar .header-container {
+    position: relative;
+    height: 130px;
+}
+
+#top-bar .content-container .tab-button {
+    position: absolute;
+    left: 25%;
     font-size: 20px;
     margin: 0;
-    color: orange;
-    background: black;
+    margin-left: -71px;
+    padding: 2px 5px;
+    color: #ffffff;
+    background: #d8b4e2;
+    border-radius: 0 0 4px 4px;
+}
+
+#top-bar .content-container .tab-button:hover {
+    color: #ffffff;
+    background: #f42272;
 }
