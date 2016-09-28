@@ -25,6 +25,13 @@
             </div>
             <a href="blog.php/?page=archive" class="tab-button">Archive</a>
         </div>
+        <div class="content">
+            <a href="blog/?page=article&title=blah">
+                <div>Title</div>
+                <div>Date</div>
+                <div>Time</div>
+            </a>
+        </div>
     </div>
 </div>
 <header>
