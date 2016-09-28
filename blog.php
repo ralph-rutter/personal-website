@@ -11,7 +11,7 @@ if (mysqli_connect_errno()) {
 
 // Request data from database
 $result = mysqli_query($con, "
-    SELECT `id`, `name`, `desc`, `date_created`, `slug`
+    SELECT `id`, `name`, `synopsis`, `date_created`, `slug`
     FROM `articles`
     ORDER BY `date_created` DESC    
     LIMIT 4
@@ -57,7 +57,7 @@ mysqli_close($con);
                     </div>
                     <div class=\"column2\">" . $result_most_recent[$key]['date_created'] . "
                     </div>
-                    <div class=\"column3\">" . $result_most_recent[$key]['desc'] . "
+                    <div class=\"column3\">" . $result_most_recent[$key]['synopsis'] . "
                     </div>
                 </a>
                 ";
