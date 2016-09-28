@@ -11,7 +11,7 @@ if (mysqli_connect_errno()) {
 
 // Request data from database
 $result = mysqli_query($con, "
-    SELECT `id`, `name`, `desc`, `date_created`
+    SELECT `id`, `name`, `desc`, `date_created`, `slug`
     FROM `articles`
     ORDER BY `date_created` DESC    
     LIMIT 4
@@ -44,10 +44,10 @@ $result_most_recent = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                 <h1>Recent Posts</h1>
                 </div>
             </div>
-            <a href="blog.php/?page=archive" class="tab-button">Archive</a>
+            <a href="blog.php?page=archive" class="tab-button">Archive</a>
         </div>
         <div class="content">
-            <a class='large-list-item' href="blog/?page=article&title=blah">
+            <a class='large-list-item' href="blog.php?page=article&title=<?php echo $result_most_recent[0]['slug']; ?>">
                 <div class="column1">
                     <?php
                         echo $result_most_recent[0]['name'];
@@ -64,7 +64,7 @@ $result_most_recent = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                     ?>
                 </div>
             </a>
-            <a class='large-list-item' href="blog/?page=article&title=blah">
+            <a class='large-list-item' href="blog.php?page=article&title=<?php echo $result_most_recent[1]['slug']; ?>">
                 <div class="column1">
                     <?php
                     echo $result_most_recent[1]['name'];
@@ -81,7 +81,7 @@ $result_most_recent = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                     ?>
                 </div>
             </a>
-            <a class='large-list-item' href="blog/?page=article&title=blah">
+            <a class='large-list-item' href="blog.php?page=article&title=<?php echo $result_most_recent[2]['slug']; ?>">
                 <div class="column1">
                     <?php
                     echo $result_most_recent[2]['name'];
@@ -98,7 +98,7 @@ $result_most_recent = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                     ?>
                 </div>
             </a>
-            <a class='large-list-item' href="blog/?page=article&title=blah">
+            <a class='large-list-item' href="blog.php?page=article&title=<?php echo $result_most_recent[3]['slug']; ?>">
                 <div class="column1">
                     <?php
                     echo $result_most_recent[3]['name'];
@@ -158,7 +158,7 @@ $result_most_recent = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                 Portfolio
             </div>
         </a>
-        <a class="button current" href="blog.php">
+        <a class="button current" href="blog.php?page=most-recent">
             <div class="icon-container">
                 <div class="icon">
                 </div>
