@@ -20,6 +20,8 @@ $result = mysqli_query($con, "
 
 // Put data into an indexed array, each element of which is an assoc. array representing a row of the table
 $result_most_recent = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
+
+mysqli_close($con);
 ?>
 <head>
     <title>Ralph Rutter</title>
@@ -47,74 +49,20 @@ $result_most_recent = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
             <a href="blog.php?page=archive" class="tab-button">Archive</a>
         </div>
         <div class="content">
-            <a class='large-list-item' href="blog.php?page=article&title=<?php echo $result_most_recent[0]['slug']; ?>">
-                <div class="column1">
-                    <?php
-                        echo $result_most_recent[0]['name'];
-                    ?>
-                </div>
-                <div class="column2">
-                    <?php
-                        echo $result_most_recent[0]['date_created'];
-                    ?>
-                </div>
-                <div class="column3">
-                    <?php
-                        echo $result_most_recent[0]['desc'];
-                    ?>
-                </div>
-            </a>
-            <a class='large-list-item' href="blog.php?page=article&title=<?php echo $result_most_recent[1]['slug']; ?>">
-                <div class="column1">
-                    <?php
-                    echo $result_most_recent[1]['name'];
-                    ?>
-                </div>
-                <div class="column2">
-                    <?php
-                    echo $result_most_recent[1]['date_created'];
-                    ?>
-                </div>
-                <div class="column3">
-                    <?php
-                    echo $result_most_recent[1]['desc'];
-                    ?>
-                </div>
-            </a>
-            <a class='large-list-item' href="blog.php?page=article&title=<?php echo $result_most_recent[2]['slug']; ?>">
-                <div class="column1">
-                    <?php
-                    echo $result_most_recent[2]['name'];
-                    ?>
-                </div>
-                <div class="column2">
-                    <?php
-                    echo $result_most_recent[2]['date_created'];
-                    ?>
-                </div>
-                <div class="column3">
-                    <?php
-                    echo $result_most_recent[2]['desc'];
-                    ?>
-                </div>
-            </a>
-            <a class='large-list-item' href="blog.php?page=article&title=<?php echo $result_most_recent[3]['slug']; ?>">
-                <div class="column1">
-                    <?php
-                    echo $result_most_recent[3]['name'];
-                    ?>
-                </div>
-                <div class="column2">
-                    <?php
-                    echo $result_most_recent[3]['date_created'];
-                    ?>
-                </div>
-                <div class="column3">
-                    <?php
-                    echo $result_most_recent[3]['desc'];
-                    ?>
-                </div>
-            </a>
+            <?php
+            foreach ($result_most_recent as $key => $value) {
+                echo "
+                <a class='large-list-item' href=\"blog.php?page=article&title=" . $result_most_recent[$key]['slug'] . "\">
+                    <div class=\"column1\">" . $result_most_recent[$key]['name'] . "
+                    </div>
+                    <div class=\"column2\">" . $result_most_recent[$key]['date_created'] . "
+                    </div>
+                    <div class=\"column3\">" . $result_most_recent[$key]['desc'] . "
+                    </div>
+                </a>
+                ";
+            }
+            ?>
         </div>
     </div>
 </div>
