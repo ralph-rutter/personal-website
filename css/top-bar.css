@@ -138,9 +138,32 @@
 
 #top-bar .content-container .content {
     font-size: 14px;
-    margin: 20px 7.5%;
+    margin: 25px 10%;
 }
 
 #top-bar .content-container .content a {
+    display: block;
     color: #55286f;
+    font-size: 0;
+    min-height: 20px;
+    padding-bottom: 3px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #55286f;
+}
+
+.content .large-list-item div {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.content .large-list-item .column1 {
+    width: 25%;
+}
+
+.content .large-list-item .column2 {
+    width: 15%;
+}
+
+.content .large-list-item .column3 {
+    width: 60%;
 }

@@ -26,10 +26,25 @@
             <a href="blog.php/?page=archive" class="tab-button">Archive</a>
         </div>
         <div class="content">
-            <a href="blog/?page=article&title=blah">
-                <div>Title</div>
-                <div>Date</div>
-                <div>Time</div>
+            <a class='large-list-item' href="blog/?page=article&title=blah">
+                <div class="column1">Title</div>
+                <div class="column2">Date</div>
+                <div class="column3">Description</div>
+            </a>
+            <a class='large-list-item' href="blog/?page=article&title=blah">
+                <div class="column1">Title</div>
+                <div class="column2">Date</div>
+                <div class="column3">Description</div>
+            </a>
+            <a class='large-list-item' href="blog/?page=article&title=blah">
+                <div class="column1">Title</div>
+                <div class="column2">Date</div>
+                <div class="column3">Description</div>
+            </a>
+            <a class='large-list-item' href="blog/?page=article&title=blah">
+                <div class="column1">Title</div>
+                <div class="column2">Date</div>
+                <div class="column3">Description</div>
             </a>
         </div>
     </div>
