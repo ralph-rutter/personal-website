@@ -5,8 +5,8 @@ require('../blog.php');
 class StackTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * Defines an array containing dummy data and passes it into the function and compares the output with what was
-     * expected.
+     * Defines an array containing dummy data and passes it into the function and compares the output, for equality,
+     * with what was expected.
      */
     public function test_links_most_recent_good()
     {
@@ -47,6 +47,30 @@ class StackTest extends PHPUnit_Framework_TestCase
 </a>
 "
         );
+    }
+
+    /**
+     * Defines an empty array, passes it into the function and compares the output, for equality, with an empty string.
+     */
+    public function test_links_most_recent_bad()
+    {
+        $test_array = [];
+        $test_me = links_most_recent($test_array);
+        $this->assertEquals($test_me, '');
+    }
+
+    /**
+     * Passes an integer into the function and compares the output with an empty string.
+     */
+
+    /**
+     * @expectedException PHPUnit_Framework_Error
+     */
+    public function test_links_most_recent_malform()
+    {
+        $test_array = 3;
+        $test_me = links_most_recent($test_array);
+        $this->assertEquals($test_me, '');
     }
 }
 
