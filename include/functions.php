@@ -94,4 +94,38 @@ function links_archive($blog_posts) {
     }
     return $links;
 }
+
+/**
+ * Makes an mysqli query to get id, article title, body, short description, date and GET query string for one blog post
+ *
+ * @param $con OBJECT the value returned by the database connection script
+ * @return ARRAY an associative array representing the table row for the blog post.
+ */
+function query_article($con) {
+    $article = $_GET['title'];
+    // Request data from database
+    $result = mysqli_query($con, "
+    SELECT `id`, `name`, `body`, `synopsis`, `date_created`, `slug`
+    FROM `articles`
+    WHERE `slug` = '$article'
+    "
+    );
+
+    // Put row data into an associative array
+    $result_article = mysqli_fetch_assoc($result);
+
+    return $result_article;
+}
+
+/**
+ * Takes a blog post and puts out an html string which displays the title, synopsis and body of the post.
+ *
+ * @param $blog_posts ARRAY an associative array representing the table row for the blog post.
+ * @return STRING html to display the synopsis and body of the post.
+ */
+function generate_article($blog_post) {
+    $article = '<p>' . $blog_post['synopsis'] . '</p>';
+    $article .= '<p>' . $blog_post['body'] . '</p>';
+    return $article;
+}
 ?>
