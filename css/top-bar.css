@@ -57,7 +57,7 @@
 }
 
 #top-bar .content-container {
-    background: #ffffff;
+    background-color: #ffffff;
     -moz-border-radius: 0 0 18px 18px;
     -webkit-border-radius: 0 0 18px 18px;
     border-radius: 0 0 18px 18px;
@@ -68,7 +68,7 @@
 
 #top-bar .header {
     position: relative;
-    background: #55286f;
+    background-color: #55286f;
     margin: auto;
     width: 85%;
     height: 75%;
@@ -93,7 +93,7 @@
     margin-top: -25px;
     margin-left: -47px;
     font-size: 38px;
-    background: #55286f;
+    background-color: #55286f;
 
 }
 
@@ -111,7 +111,7 @@
     margin-top: -25px;
     margin-left: -118px;
     font-size: 38px;
-    background: #55286f;
+    background-color: #55286f;
 }
 
 #top-bar .header-container {
@@ -127,13 +127,13 @@
     margin-left: -71px;
     padding: 2px 5px;
     color: #ffffff;
-    background: #d8b4e2;
+    background-color: #d8b4e2;
     border-radius: 0 0 4px 4px;
 }
 
 #top-bar .content-container .tab-button:hover {
     color: #ffffff;
-    background: #f42272;
+    background-color: #f42272;
 }
 
 #top-bar .content-container .content {
