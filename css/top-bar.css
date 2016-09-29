@@ -139,6 +139,8 @@
 #top-bar .content-container .content {
     font-size: 14px;
     margin: 25px 10%;
+    overflow: auto;
+    height: 63%;
 }
 
 #top-bar .content-container .content a {
