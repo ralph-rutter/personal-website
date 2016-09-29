@@ -2,14 +2,9 @@
 <html>
 <head>
 	<title>Ralph's Projects</title>
-	<link rel="stylesheet" type="text/css" href="css/global.css">
-	<link rel="stylesheet" type="text/css" href="css/grid.css">
-	<link rel="stylesheet" type="text/css" href="css/nav.css">
-	<link rel="stylesheet" type="text/css" href="css/top-bar.css">
-	<link rel="stylesheet" type="text/css" href="css/content.css">
-	<link rel="stylesheet" type="text/css" href="css/header.css">
-	<link rel="stylesheet" type="text/css" href="css/typography.css">
-	<link rel="stylesheet" type="text/css" href="css/footer.css">
+    <?php
+    require 'include/links.php';
+    ?>
 </head>
 <body>
 	<div id="top-bar" class="col4">
@@ -21,7 +16,7 @@
 		</div>
 	</div>
 	<header>
-		<a class="nav-button previous" href="index.html">
+		<a class="nav-button previous" href="index.php">
 			<img src="images/home-icon.png" alt="home icon">
 		</a>
 		<div class="container margin col4">
@@ -47,9 +42,9 @@
 		</div>
 	</main>
 	<nav>
-		<a class="big-button" href="contact.html">Get In Touch</a>
+		<a class="big-button" href="contact.php">Get In Touch</a>
 		<div id="nav-bar">
-			<a class="button" href="about.html">
+			<a class="button" href="about.php">
 				<div class="icon-container">
 					<div class="icon">
 					</div>
@@ -58,7 +53,7 @@
 					About Me
 				</div>
 			</a>
-			<a class="button" href="index.html">
+			<a class="button" href="index.php">
 				<div class="icon-container">
 					<div class="icon">
 					</div>
@@ -67,7 +62,7 @@
 					Home
 				</div>
 			</a>
-			<a class="button current" href="portfolio.html">
+			<a class="button current" href="portfolio.php">
 				<div class="icon-container">
 					<div class="icon">
 					</div>

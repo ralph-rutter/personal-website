@@ -10,14 +10,9 @@ mysqli_close($con);
 ?>
 <head>
     <title>Ralph Rutter</title>
-    <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/grid.css">
-    <link rel="stylesheet" type="text/css" href="css/nav.css">
-    <link rel="stylesheet" type="text/css" href="css/top-bar.css">
-    <link rel="stylesheet" type="text/css" href="css/content.css">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/typography.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <?php
+    require 'include/links.php';
+    ?>
 </head>
 <body>
 <div id="top-bar">
@@ -65,19 +60,19 @@ mysqli_close($con);
     </div>
 </div>
 <header>
-    <a class="nav-button previous" href="portfolio.html">
+    <a class="nav-button previous" href="portfolio.php">
         <img src="images/portfolio-icon.png" alt="portfolio icon">
     </a>
-    <a class="nav-button next" href="about.html">
+    <a class="nav-button next" href="about.php">
         <img src="images/about-icon.png" alt="about icon">
     </a>
 </header>
 <main>
 </main>
 <nav>
-    <a class="big-button" href="contact.html">Get In Touch</a>
+    <a class="big-button" href="contact.php">Get In Touch</a>
     <div id="nav-bar">
-        <a class="button" href="about.html">
+        <a class="button" href="about.php">
             <div class="icon-container">
                 <div class="icon">
                 </div>
@@ -86,7 +81,7 @@ mysqli_close($con);
                 About Me
             </div>
         </a>
-        <a class="button" href="index.html">
+        <a class="button" href="index.php">
             <div class="icon-container">
                 <div class="icon">
                 </div>
@@ -95,7 +90,7 @@ mysqli_close($con);
                 Home
             </div>
         </a>
-        <a class="button" href="portfolio.html">
+        <a class="button" href="portfolio.php">
             <div class="icon-container">
                 <div class="icon">
                 </div>
