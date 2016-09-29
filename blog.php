@@ -4,6 +4,7 @@
 include 'include/functions.php';
 include 'include/connect.php';
 $result_most_recent = query_most_recent($con, 3);
+$result_archive = query_archive($con);
 mysqli_close($con);
 ?>
 <head>
@@ -26,14 +27,21 @@ mysqli_close($con);
                     <h2>Blog:</h2>
                 </div>
                 <div class="subtitle">
-                <h1>Recent Posts</h1>
+                    <h1>Recent Posts</h1>
                 </div>
             </div>
             <a href="blog.php?page=archive" class="tab-button">Archive</a>
         </div>
         <div class="content">
             <?php
-            echo links_most_recent($result_most_recent);
+            switch ($_GET['page']) {
+                case 'most-recent':
+                    echo links_most_recent($result_most_recent);
+                    break;
+                case 'archive':
+                    echo links_archive($result_archive);
+                    break;
+            }
             ?>
         </div>
     </div>
