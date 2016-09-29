@@ -37,15 +37,15 @@ function links_most_recent($blog_posts) {
     $links = '';
     foreach ($blog_posts as $post) {
         $links .= "
-                <a class='large-list-item' href=\"blog.php?page=article&title=" . $post['slug'] . "\">
-                    <div class=\"column1\">" . $post['name'] . "
-                    </div>
-                    <div class=\"column2\">" . $post['date_created'] . "
-                    </div>
-                    <div class=\"column3\">" . $post['synopsis'] . "
-                    </div>
-                </a>
-                ";
+<a class='large-list-item' href=\"blog.php?page=article&title=" . $post['slug'] . "\">
+    <div class=\"column1\">" . $post['name'] . "
+    </div>
+    <div class=\"column2\">" . $post['date_created'] . "
+    </div>
+    <div class=\"column3\">" . $post['synopsis'] . "
+    </div>
+</a>
+";
     }
     return $links;
 }
