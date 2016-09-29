@@ -25,6 +25,23 @@ function query_most_recent($con, $num) {
     return $result_most_recent;
 }
 
+function links_most_recent($blog_posts) {
+    $links = '';
+    foreach ($blog_posts as $post) {
+        $links .= "
+                <a class='large-list-item' href=\"blog.php?page=article&title=" . $post['slug'] . "\">
+                    <div class=\"column1\">" . $post['name'] . "
+                    </div>
+                    <div class=\"column2\">" . $post['date_created'] . "
+                    </div>
+                    <div class=\"column3\">" . $post['synopsis'] . "
+                    </div>
+                </a>
+                ";
+    }
+    return $links;
+}
+
 include 'connect.php';
 $result_most_recent = query_most_recent($con, 5);
 mysqli_close($con);
@@ -56,18 +73,7 @@ mysqli_close($con);
         </div>
         <div class="content">
             <?php
-            foreach ($result_most_recent as $key => $value) {
-                echo "
-                <a class='large-list-item' href=\"blog.php?page=article&title=" . $result_most_recent[$key]['slug'] . "\">
-                    <div class=\"column1\">" . $result_most_recent[$key]['name'] . "
-                    </div>
-                    <div class=\"column2\">" . $result_most_recent[$key]['date_created'] . "
-                    </div>
-                    <div class=\"column3\">" . $result_most_recent[$key]['synopsis'] . "
-                    </div>
-                </a>
-                ";
-            }
+            echo links_most_recent($result_most_recent);
             ?>
         </div>
     </div>
