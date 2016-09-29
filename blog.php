@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
 <?php
-include 'connect.php';
-
-// Request data from database
-$result = mysqli_query($con, "
+/**
+ * Makes an mysqli query to get id, article title, long description, date and GET query string for a specified number of
+ * most recent blog posts
+ *
+ * @param $con OBJECT the value returned by the database connection script
+ * @param $num INTEGER the number of articles wanted
+ * @return ARRAY an indexed array containing associative arrays representing table rows.
+ */
+function query_most_recent($con, $num) {
+    // Request data from database
+    $result = mysqli_query($con, "
     SELECT `id`, `name`, `synopsis`, `date_created`, `slug`
     FROM `articles`
     ORDER BY `date_created` DESC    
-    LIMIT 4
+    LIMIT $num
     "
-);
+    );
 
-// Put data into an indexed array, each element of which is an assoc. array representing a row of the table
-$result_most_recent = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
+    // Put data into an indexed array, each element of which is an assoc. array representing a row of the table
+    $result_most_recent = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+    return $result_most_recent;
+}
+
+include 'connect.php';
+$result_most_recent = query_most_recent($con, 5);
 mysqli_close($con);
 ?>
 <head>
