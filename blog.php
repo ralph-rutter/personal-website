@@ -25,6 +25,14 @@ function query_most_recent($con, $num) {
     return $result_most_recent;
 }
 
+/**
+ * Takes an array of blog posts and puts out an html string containing a link for each one, containing the title, date
+ * and synopsis of each one.
+ *
+ * @param $blog_posts ARRAY an indexed array, each element of which is an assoc. array representing a row of the table
+ * (one post).
+ * @return STRING a collection of anchor tags for all the posts on 'most recent'
+ */
 function links_most_recent($blog_posts) {
     $links = '';
     foreach ($blog_posts as $post) {

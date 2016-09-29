@@ -1,6 +1,6 @@
 <?php
 //connect to database
-$con = mysqli_connect("192.168.20.56","root","","my_blog");
+$con = mysqli_connect("192.168.20.56","root","","ralphs_blog");
 
 // Check connection
 if (mysqli_connect_errno()) {
