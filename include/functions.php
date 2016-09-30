@@ -1,7 +1,7 @@
 <?php
 /**
  * Makes an mysqli query to get id, article title, long description, date and GET query string for a specified number of
- * most recent blog posts
+ * most recent blog posts. Can't be unit tested, integration testing would be needed.
  *
  * @param $con OBJECT the value returned by the database connection script
  * @param $num INTEGER the number of articles wanted
@@ -50,7 +50,8 @@ function links_most_recent($blog_posts) {
 
 
 /**
- * Makes an mysqli query to get id, article title, short description, date and GET query string for all blog posts
+ * Makes an mysqli query to get id, article title, short description, date and GET query string for all blog posts.
+ * Can't be unit tested, integration testing would be needed.
  *
  * @param $con OBJECT the value returned by the database connection script
  * @return ARRAY an indexed array containing associative arrays representing table rows.
@@ -96,7 +97,8 @@ function links_archive($blog_posts) {
 }
 
 /**
- * Makes an mysqli query to get id, article title, body, short description, date and GET query string for one blog post
+ * Makes an mysqli query to get id, article title, body, short description, date and GET query string for one blog post.
+ * Can't be unit tested, integration testing would be needed.
  *
  * @param $con OBJECT the value returned by the database connection script
  * @return ARRAY an associative array representing the table row for the blog post.
@@ -124,8 +126,11 @@ function query_article($con) {
  * @return STRING html to display the synopsis and body of the post.
  */
 function generate_article($blog_post) {
-    $article = '<p>' . $blog_post['synopsis'] . '</p>';
-    $article .= '<p>' . $blog_post['body'] . '</p>';
+    $article = '';
+    if (gettype($blog_post) === 'array' && isset($blog_post['synopsis']) && isset($blog_post['body'])){
+        $article = '<p>' . $blog_post['synopsis'] . '</p>';
+        $article .= '<p>' . $blog_post['body'] . '</p>';
+    }
     return $article;
 }
 ?>
