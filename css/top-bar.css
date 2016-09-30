@@ -128,6 +128,8 @@
     padding: 2px 5px;
     color: #ffffff;
     background-color: #d8b4e2;
+    -moz-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
     border-radius: 0 0 4px 4px;
 }
 
