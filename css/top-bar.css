@@ -75,7 +75,7 @@
     -moz-border-radius: 0 0 18px 18px;
     -webkit-border-radius: 0 0 18px 18px;
     border-radius: 0 0 18px 18px;
-    font-size: 0px;
+    font-size:0;
     color: #ffffff;
 }
 
