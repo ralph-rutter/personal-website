@@ -3,10 +3,18 @@
 <?php
 include 'include/functions.php';
 include 'include/connect.php';
-$result_most_recent = query_most_recent($con, 3);
-$result_archive = query_archive($con);
-$result_article = query_article($con);
-mysqli_close($con);
+switch ($_GET['page']) {
+    case 'most-recent':
+        $result_most_recent = query_most_recent($con, 3); //getting data for most recent posts
+        break;
+    case 'archive':
+        $result_archive = query_archive($con); //getting data for archive
+        break;
+    case 'article':
+        $result_article = query_article($con); //getting data for an article
+        break;
+}
+mysqli_close($con); //closing connection with database
 ?>
 <head>
     <title>Ralph Rutter</title>
@@ -25,7 +33,7 @@ mysqli_close($con);
                 <div class="subtitle">
                     <h1>
                         <?php
-                        switch ($_GET['page']) {
+                        switch ($_GET['page']) { //changes subtitle depending on the page
                             case 'most-recent':
                                 echo 'Recent Posts';
                                 break;
@@ -33,7 +41,7 @@ mysqli_close($con);
                                 echo 'Archive';
                                 break;
                             case 'article':
-                                echo $result_article['name'];
+                                echo $result_article['name']; //echoes  title of  article specified in the query string
                                 break;
                         }
                         ?>
@@ -44,15 +52,15 @@ mysqli_close($con);
         </div>
         <div class="content">
             <?php
-            switch ($_GET['page']) {
+            switch ($_GET['page']) { //outputs content depending on the page
                 case 'most-recent':
-                    echo links_most_recent($result_most_recent);
+                    echo links_most_recent($result_most_recent); //outputs links to most recent articles
                     break;
                 case 'archive':
-                    echo links_archive($result_archive);
+                    echo links_archive($result_archive); //outputs links to all articles
                     break;
                 case 'article':
-                    echo generate_article($result_article);
+                    echo generate_article($result_article); //outputs the article specified in the query string (GET)
                     break;
             }
             ?>
