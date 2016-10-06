@@ -1,6 +1,6 @@
 <?php
 /**
- * Makes an mysqli query to get id, article title, long description, date and GET query string for a specified number of
+ * Makes an sql query to get id, article title, long description, date and GET query string for a specified number of
  * most recent blog posts. Can't be unit tested, integration testing would be needed.
  *
  * @param $con OBJECT the value returned by the database connection script
@@ -9,17 +9,18 @@
  */
 function query_most_recent($con, $num) {
     // Request data from database
-    $result = mysqli_query($con, "
+    $result = $con->prepare("
     SELECT `id`, `name`, `synopsis`, `date_created`, `slug`
     FROM `articles`
     ORDER BY `date_created` DESC    
     LIMIT $num
     "
     );
+    $result->execute();
 
     // Put data into an indexed array, each element of which is an assoc. array representing a row of the table
-    $result_most_recent = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+    $result_most_recent = $result->fetchAll(PDO::FETCH_ASSOC);
+    $result = NULL; //part of closing connection
     return $result_most_recent;
 }
 
@@ -50,7 +51,7 @@ function links_most_recent($blog_posts) {
 
 
 /**
- * Makes an mysqli query to get id, article title, short description, date and GET query string for all blog posts.
+ * Makes an sql query to get id, article title, short description, date and GET query string for all blog posts.
  * Can't be unit tested, integration testing would be needed.
  *
  * @param $con OBJECT the value returned by the database connection script
@@ -58,16 +59,17 @@ function links_most_recent($blog_posts) {
  */
 function query_archive($con) {
     // Request data from database
-    $result = mysqli_query($con, "
+    $result = $con->prepare("
     SELECT `id`, `name`, `desc`, `date_created`, `slug`
     FROM `articles`
     ORDER BY `date_created` DESC    
     "
     );
+    $result->execute();
 
     // Put data into an indexed array, each element of which is an assoc. array representing a row of the table
-    $result_archive = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+    $result_archive = $result->fetchAll(PDO::FETCH_ASSOC);
+    $result = NULL; //part of closing connection
     return $result_archive;
 }
 
@@ -97,7 +99,7 @@ function links_archive($blog_posts) {
 }
 
 /**
- * Makes an mysqli query to get id, article title, body, short description, date and GET query string for one blog post.
+ * Makes an sql query to get id, article title, body, short description, date and GET query string for one blog post.
  * Can't be unit tested, integration testing would be needed.
  *
  * @param $con OBJECT the value returned by the database connection script
@@ -106,16 +108,18 @@ function links_archive($blog_posts) {
 function query_article($con) {
     $article = $_GET['title'];
     // Request data from database
-    $result = mysqli_query($con, "
+    $result = $con->prepare("
     SELECT `id`, `name`, `body`, `synopsis`, `date_created`, `slug`
     FROM `articles`
     WHERE `slug` = '$article'
     "
     );
+    $result->execute();
 
     // Put row data into an associative array
-    $result_article = mysqli_fetch_assoc($result);
+    $result_article = $result->fetch(PDO::FETCH_ASSOC);
 
+    $result = NULL; //part of closing connection
     return $result_article;
 }
 

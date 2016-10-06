@@ -1,6 +1,6 @@
 <?php
 //connect to database
-$con = mysqli_connect("192.168.20.56","root","","ralphs_blog");
+$con = new PDO("mysql:host=192.168.20.56;dbname=ralphs_blog","root","");
 
 // Check connection
 if (mysqli_connect_errno()) {

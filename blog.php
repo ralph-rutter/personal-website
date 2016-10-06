@@ -14,7 +14,7 @@ switch ($_GET['page']) {
         $result_article = query_article($con); //getting data for an article
         break;
 }
-mysqli_close($con); //closing connection with database
+$con = NULL; //closing connection with database
 ?>
 <head>
     <title>Ralph Rutter</title>
@@ -48,7 +48,7 @@ mysqli_close($con); //closing connection with database
                     </h1>
                 </div>
             </div>
-            <a href="blog.php?page=archive" class="tab-button">Archive</a>
+            <a href="blog.php?page=archive" class="tab-button-2">Archive</a>
         </div>
         <div class="content">
             <?php
