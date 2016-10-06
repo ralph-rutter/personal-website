@@ -1,0 +1,120 @@
+header #main-heading {
+	display: inline-block;
+	position: relative;
+	z-index: 20;
+}
+
+header #main-heading h1 {
+	margin: 0;
+	padding: 15px;
+	background-color: #55286f;
+	border: 2px solid #d8b4e2;
+	-moz-webkit-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	font-size: 80px;
+	color: #ffffff;
+}
+
+header h1.small-heading {
+	position: absolute;
+	width: 12%;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	padding: 5px 8px;
+	background-color: #55286f;
+	-moz-border-radius:0 0 10px 10px;
+	-webkit-border-radius:0 0 10px 10px;
+	border-radius:0 0 10px 10px;
+	border: 2px solid #d8b4e2;
+	border-top: 0;
+	text-align: center;
+	color: #ffffff;
+	font-size: 20px;
+	margin-left: -6%;
+	z-index: 1;
+}
+
+header img.centre {
+	position: absolute;
+	width: 12%;
+	top: 50%;
+	left: 50%;
+	border: 2px solid #d8b4e2;
+	border-bottom: 0;
+	-moz-border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;
+	background-color: #d8b4e2;
+	margin-top: -15.7%;
+	margin-left: -6%;
+	z-index: 20;
+	
+}
+
+header .container.margin {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 80%;
+	font-size: 0;
+	margin-left: -40%;
+	margin-top: -33px;
+	z-index: 20;
+}
+
+header .col4 h1 {
+	display: inline-block;
+	width: 25%;
+	font-size: 20px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #55286f;
+	padding: 8px;
+	border-left: 1px solid #d8b4e2;
+}
+
+header .col4 h1:first-child {
+	border-left: 0;
+}
+
+header .nav-button {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	border: 2px solid #55286f;
+	background-color: #55286f;
+	padding: 9px;
+	height: 50px;
+	width: 50px;
+	margin-top: -25px;
+	z-index: 20;
+}
+
+header .nav-button img {
+	width: 24px;
+}
+
+header .nav-button:hover {
+	background-color: #f42272;
+	border-color: #55286f;
+}
+
+header .nav-button.previous {
+	left: 0;
+	border-left: 0;
+	-moz-border-radius:0 7px 7px 0;
+	-webkit-border-radius:0 7px 7px 0;
+	border-radius:0 7px 7px 0;
+	padding: 9px 10px 9px 9px;
+}
+
+header .nav-button.next {
+	right: 0;
+	border-right: 0;
+	-moz-border-radius: 7px 0 0 7px;
+	-webkit-border-radius: 7px 0 0 7px;
+	border-radius: 7px 0 0 7px;
+	padding: 9px 9px 9px 10px;
+}
